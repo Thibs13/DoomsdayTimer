@@ -1,0 +1,9 @@
+{
+  "name": "Ma liste Marvel",
+  "short_name": "Marvel",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#0E1830",
+  "theme_color": "#0E1830",
+  "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}

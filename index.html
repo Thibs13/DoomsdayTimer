@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Ma liste Marvel</title>
+  <meta name="description" content="Suivi des films et séries Marvel vus et à voir, avec compte à rebours jusqu'à Avengers: Doomsday.">
+  <meta name="theme-color" content="#0E1830">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Marvel">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.svg">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero" id="hero">
+    <div class="hero-bg" id="heroBg" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <div class="brand" aria-label="Marvel">MARVEL</div>
+      <h1 class="hero-title">Avengers<span>Doomsday</span></h1>
+      <p class="hero-sub" id="heroSub">Au cinéma le 16 décembre 2026</p>
+      <div class="countdown" id="countdown" role="timer" aria-live="off">
+        <div class="cd-unit"><b id="cdD">--</b><small>jours</small></div>
+        <div class="cd-unit"><b id="cdH">--</b><small>heures</small></div>
+        <div class="cd-unit"><b id="cdM">--</b><small>min</small></div>
+        <div class="cd-unit"><b id="cdS">--</b><small>sec</small></div>
+      </div>
+    </div>
+  </header>
+
+  <section class="next" id="next" hidden>
+    <img class="next-poster" id="nextPoster" alt="">
+    <div class="next-body">
+      <p class="next-kicker">Prochain à regarder</p>
+      <p class="next-title" id="nextTitle"></p>
+      <p class="next-meta" id="nextMeta"></p>
+      <button class="btn-primary" id="nextBtn" type="button">Marquer comme vu</button>
+    </div>
+  </section>
+
+  <nav class="bar" id="bar">
+    <div class="progress">
+      <div class="progress-text"><span id="pSeen">0</span> vus sur <span id="pTotal">0</span><span class="progress-pct" id="pPct">0 %</span></div>
+      <div class="progress-track"><div class="progress-fill" id="pFill"></div></div>
+    </div>
+    <div class="seg" role="tablist" aria-label="Filtrer">
+      <button role="tab" data-filter="todo" aria-selected="true">À voir <span id="cTodo"></span></button>
+      <button role="tab" data-filter="seen" aria-selected="false">Vus <span id="cSeen"></span></button>
+      <button role="tab" data-filter="all" aria-selected="false">Tout</button>
+    </div>
+  </nav>
+
+  <main id="list" data-filter="todo"></main>
+
+  <p class="empty" id="empty" hidden>Rien ici pour l'instant.</p>
+
+  <footer class="foot">
+    <button type="button" id="exportBtn">Copier ma sauvegarde</button>
+    <button type="button" id="importBtn">Restaurer</button>
+    <p>Progression enregistrée sur cet appareil. Affiches : Wikipedia.</p>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <span id="toastText"></span>
+    <button type="button" id="toastUndo">Annuler</button>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
